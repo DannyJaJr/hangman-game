@@ -1,4 +1,3 @@
-from os import name
 import time
 import random
 
@@ -8,6 +7,7 @@ def print_pause(message_to_print):
     time.sleep(1)
 
 
+# Global variable
 name_x = input("What is your name ? ")
 
 
@@ -35,8 +35,8 @@ def valid_input():
         else:
             guess = str(data.lower())
         if guess in secret:
-            print_pause(f"Corect! there's '{guess}' in the secret word")
             print_pause("Now add new letter(s)")
+            print_pause(f"Corect! there's '{guess}' in the secret word")
         else:
             totalCount -= 1
             print_pause(f"No '{guess}' in in the secret word")
@@ -51,7 +51,7 @@ def valid_input():
                 wrongInput += 1
         if wrongInput == 0:
             print_pause(f" Congratulation! {name_x} with hangman")
-            print_pause(f"the word is: {secret}. You won")
+            print_pause(f"the word is: {secret}! You won")
             play_again()
             break
     else:
