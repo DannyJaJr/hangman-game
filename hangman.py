@@ -28,7 +28,7 @@ word = ["bye", "love", "rain", "new york",
 def valid_input():
     secret = random.choice(word)
     guessWord = ""
-    totalCount = 2
+    totalCount = 5
     while totalCount > 0:
         data = input(" Enter a letter: ")
         if data == "":
@@ -72,10 +72,13 @@ def play_again():
         print_pause("The options were yes/no")
         print_pause(f"{new}, will be comsidered as a no")
         print_pause(f"Good Bye {name_x}")
-    else:
+    elif new.lower() == "no":
         print_pause("That's a NO")
         print_pause(f"Good Bye {name_x}")
         print_pause(f"Good Bye {name_x}")
+    else:
+        print_pause(f"{new} it's an Invalid entry, try again please")
+        play_again()
 
 
 def play_game():
